@@ -131,7 +131,7 @@ body {
 
 .clear-btn-container {
   display: grid;
-  width: 100px;
+  width: 120px;
   justify-content: start;
   margin-bottom: 5px;
 }
