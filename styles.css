@@ -1,7 +1,8 @@
 body {
   font-family: system-ui;
-  padding: 0 7px;
+  padding: 10px;
   background-color: rgba(110, 110, 110, 0.26);
+  font-size: 1em;
 }
 
 .project-title-container {
@@ -59,6 +60,7 @@ body {
   padding: 12px 0px;
   border: none;
   color: black;
+  font-size: 1em;
   background-color: rgba(9, 255, 0, 0.548);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.288);
   border-radius: 5px;
