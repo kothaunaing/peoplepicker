@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>People Picker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="project-title-container">
+    <div class="project-title">People Picker</div>
+    <div class="author">by <a class="author-fb-link" href="https://www.facebook.com/kothaunaing">Than Aung Naing</a></div>
+  </div>
+  
+  <div class="both-sections">
+    <!-- Left section -->
+    <div class="left-section">
+
+      <div class="input-container">
+        <input type="text" class="name-input" placeholder="Add names here" onkeydown="
+          addWithEnter(event);
+          ">
+        <button class="add-btn" onclick="
+        addPeople();
+        ">Add</button>
+      </div>
+      <p class="total-people">Total : <span class="display-people"></span></p>
+      <div class="added-people">
+      </div>
+    </div>
+
+    <!-- Right section -->
+    <div class="right-section">
+
+      <div class="input-container">
+        <input type="text" class="people-number-input" placeholder="Number of people you want">
+        <button class="choose-btn" onclick="
+        chooseButton();
+        ">Pick</button>
+      </div>
+      <div class="selected-people">
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js">
+  </script>
+</body>
+
+</html>

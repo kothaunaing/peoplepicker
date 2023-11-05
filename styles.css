@@ -1,0 +1,183 @@
+body {
+  font-family: system-ui;
+  padding: 0 7px;
+  background-color: rgba(110, 110, 110, 0.26);
+}
+
+.project-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-title {
+  padding: 5px 0 15px 0;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.author {
+  padding: 5px 0 15px 0;
+  font-style: italic;
+}
+
+.author-fb-link:link {
+  color: rgb(6, 59, 231);
+  font-weight: 600;
+}
+
+.both-sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 5px;
+}
+
+@media (max-width: 650px){
+  .both-sections {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+  }
+}
+
+.input-container {
+  display: grid;
+  grid-template-columns: 3fr 100px;
+  column-gap: 5px;
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+.total-people {
+  font-weight: 600;
+}
+
+.choose-btn,
+.add-btn,
+.delete-btn,
+.clear-btn {
+  padding: 12px 0px;
+  border: none;
+  color: black;
+  background-color: rgba(9, 255, 0, 0.548);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.288);
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  border: 1px solid rgba(255, 103, 2, 0);
+  transition: opacity 0.15s, background-color 0.15s, border 0.15s;
+}
+
+.delete-btn {
+  background-color: rgba(9, 255, 0, 0.548);
+  border-radius: 0;
+  border: 1px solid rgba(204, 11, 252, 0);
+}
+
+.choose-btn:hover,
+.add-btn:hover,
+.delete-btn:hover,
+.clear-btn:hover {
+  opacity: 0.7;
+}
+
+.choose-btn:hover,
+.add-btn:hover,
+.clear-btn:hover {
+  border: 1px solid rgba(110, 110, 110, 0.596);
+}
+
+.left-section,
+.right-section {
+  border: 1px solid rgb(231, 231, 231);
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.137);
+  background-color: rgb(241, 241, 241);
+}
+
+.name-input,
+.people-number-input {
+  height: 38px;
+  border: 1.5px solid rgb(209, 209, 209);
+  outline-color: rgb(37, 226, 20);
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 1em;
+}
+
+.name-input::placeholder,
+.people-number-input::placeholder {
+  font-size: 1em;
+  font-family: system-ui;
+}
+
+.added-people,
+.selected-people {
+  display: grid;
+  row-gap: 4px;
+}
+
+.added-person-container {
+  display: grid;
+  grid-template-columns: 3fr 100px;
+  column-gap: 0px;
+  align-items: stretch;
+  border: 1px solid rgba(228, 228, 228, 0);
+}
+
+.clear-btn-container {
+  display: grid;
+  width: 100px;
+  justify-content: start;
+  margin-bottom: 5px;
+}
+
+.clear-btn {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.added-person-container:hover,
+.selected-person:hover {
+  opacity: 0.75;
+  border: 1px solid rgb(155, 155, 155);
+}
+
+.added-person {
+  display: flex;
+  column-gap: 5px;
+  align-items: center;
+  background-color: rgba(96, 218, 255, 0.075);
+  padding: 5px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.137);
+  border: 1px solid rgb(216, 216, 216);
+  font-weight: 600;
+  overflow: auto;
+}
+
+.selected-person {
+  display: flex;
+  column-gap: 5px;
+  align-items: center;
+  background-color: rgba(76, 27, 255, 0.11);
+  padding: 5px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.137);
+  border: 1px solid rgb(216, 216, 216);
+  font-weight: 600;
+  overflow: auto;
+}
+
+.chosen-message {
+  padding: 5px;
+  margin: 5px;
+  font-weight: 600;
+}
+
+.added-people-message,
+.chosen-people-message {
+  font-size: 1.1em;
+  font-weight: 600;
+  text-align: center;
+}
