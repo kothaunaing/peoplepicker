@@ -36,10 +36,10 @@ function displayAddedPeople() {
             <div class="number">${i + 1}.</div>
             <div class="name">${name}</div>
           </div>
-          <button class="delete-btn" onclick="
-          addedPeople.splice(${i}, 1);
-          displayAddedPeople();
-          saveToLocal();
+            <button class="delete-btn" onclick="
+            addedPeople.splice(${i}, 1);
+            displayAddedPeople();
+            saveToLocal();
           ">Remove</button>
         </div>
         `;
@@ -164,28 +164,29 @@ function errorMessage() {
   }
 }
 
-function errorExceedPeople(){
+function errorExceedPeople() {
   const peopleNumber = numberPeopleInputElement.value;
   const totalPeopleNumber = addedPeople.length;
   let people = `are only ${totalPeopleNumber} people`;
 
-  if (totalPeopleNumber === 1){
+  if (totalPeopleNumber === 1) {
     people = `is only one person`;
   }
 
-  if (totalPeopleNumber === 0){
+  if (totalPeopleNumber === 0) {
     people = `is nothing`;
   }
-  
-  if (peopleNumber > totalPeopleNumber){
+
+  if (peopleNumber > totalPeopleNumber) {
     selectedPeopleElement.innerHTML = `
     <p class="chosen-people-message">
     There  ${people} in the list !
     </p> `;
   }
+}
 
-  if (totalPeopleNumber === 0){
-
+function pickWithEnter(event) {
+  if (event.key === 'Enter') {
+    chooseButton();
   }
-
 }

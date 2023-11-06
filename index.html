@@ -11,9 +11,10 @@
 <body>
   <div class="project-title-container">
     <div class="project-title">People Picker</div>
-    <div class="author">by <a class="author-fb-link" href="https://www.facebook.com/kothaunaing">Than Aung Naing</a></div>
+    <div class="author">by <a class="author-fb-link" title="Author's Facebook" href="https://www.facebook.com/kothaunaing">Than Aung Naing</a>
+    </div>
   </div>
-  
+
   <div class="both-sections">
     <!-- Left section -->
     <div class="left-section">
@@ -22,9 +23,12 @@
         <input type="text" class="name-input" placeholder="Add names here" onkeydown="
           addWithEnter(event);
           ">
-        <button class="add-btn" onclick="
-        addPeople();
+        <div class="add-btn-container">
+          <button class="add-btn" onclick="
+         addPeople();
         ">Add</button>
+        <div class="tooltip">Add to list</div>
+        </div>
       </div>
       <p class="total-people">Total : <span class="display-people"></span></p>
       <div class="added-people">
@@ -35,10 +39,15 @@
     <div class="right-section">
 
       <div class="input-container">
-        <input type="text" class="people-number-input" placeholder="Number of people you want">
-        <button class="choose-btn" onclick="
+        <input type="text" class="people-number-input" placeholder="Number of people you want" onkeydown="
+          pickWithEnter(event);
+          ">
+        <div class="pick-btn-container">
+          <button class="choose-btn" onclick="
         chooseButton();
         ">Pick</button>
+        <div class="tooltip">Pick randomly</div>
+        </div>
       </div>
       <div class="selected-people">
       </div>
