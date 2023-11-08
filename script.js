@@ -10,7 +10,7 @@ let chosenPeople = JSON.parse(localStorage.getItem('chosen-people')) || [];
 
 displayAddedPeople();
 displayChosenPeople();
-setToZero();
+chosenPeople = [];
 
 function addPeople() {
   const addedPerson = nameInputElement.value;
@@ -65,12 +65,21 @@ function displayAddedPeople() {
 }
 
 function chooseButton() {
+
+  setTimeout(function(){
+    displayChosenPeople();
+    chosenPeople = [];
+    errorExceedPeople();
+  }, 2000);
+
   chooseRandomPeople();
-  displayChosenPeople();
   saveToLocal();
-  setToZero();
-  errorMessage();
-  errorExceedPeople();
+
+  selectedPeopleElement.innerHTML = `
+  <p class="chosen-people-message">
+      Loading . . .
+    </p>
+  `;
 }
 
 function chooseRandomPeople() {
@@ -126,11 +135,6 @@ function displayChosenPeople() {
   }
 }
 
-
-function setToZero() {
-  chosenPeople = [];
-}
-
 function saveToLocal() {
   const chosenPeopleString = JSON.stringify(chosenPeople);
   const addedPeopleString = JSON.stringify(addedPeople);
@@ -154,33 +158,23 @@ function clearAddedPeople() {
   nameInputElement.value = '';
 }
 
-function errorMessage() {
-  if (addedPeople.length === 0) {
-    selectedPeopleElement.innerHTML = `
-    <p class="chosen-people-message">
-      Add names first. Then pick again !
-    </p>
-    `;
-  }
-}
-
 function errorExceedPeople() {
   const peopleNumber = numberPeopleInputElement.value;
   const totalPeopleNumber = addedPeople.length;
-  let people = `are only ${totalPeopleNumber} people`;
+  let message = `There are only ${totalPeopleNumber} people in the list.`;
 
   if (totalPeopleNumber === 1) {
-    people = `is only one person`;
+    message = `There is only one person in the list.`;
   }
 
   if (totalPeopleNumber === 0) {
-    people = `is nothing`;
+    message = `Add names first. Then pick again !`;
   }
 
   if (peopleNumber > totalPeopleNumber) {
     selectedPeopleElement.innerHTML = `
     <p class="chosen-people-message">
-    There  ${people} in the list !
+    ${message}
     </p> `;
   }
 }
